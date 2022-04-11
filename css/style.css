@@ -1,0 +1,752 @@
+*,
+*::before,
+**::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    background: #17161b;
+    color: #fff;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+ul>li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*----------------------------------------*/
+
+.grid {
+    display: grid;
+    grid-template-areas:
+        "my-header my-header my-header"
+        "my-aside my-main my-main"
+        "my-aside my-main my-main";
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 3rem 0;
+}
+
+.grid-init {
+    max-width: 144rem;
+    margin: auto;
+    padding: 3rem 2.4rem 4rem 2.4rem;
+}
+
+.header {
+    grid-area: my-header;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.07);
+}
+
+.main {
+    grid-area: my-main;
+}
+
+.aside {
+    grid-area: my-aside;
+
+}
+
+.header__wrap {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    font-weight: 700;
+    font-size: 64px;
+    /*Изначальный line-height 75px делим на font-size: 64px;*/
+    line-height: 117%;
+    margin-right: 7rem;
+}
+
+.header__nav {
+    margin-right: 9.2rem;
+}
+
+.header__nav a {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 117%;
+}
+
+.header__nav a:not(:last-child) {
+    margin-right: 1.8rem;
+}
+
+.header__find {
+    width: 330px;
+    height: 41px;
+    border-radius: 8px;
+    margin-right: 6.9rem;
+}
+
+.header__find input {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08) url('../img/search.svg');
+    background-repeat: no-repeat;
+    background-position: top 50% right 1.5rem;
+    background-size: 2rem;
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 115%;
+    padding-left: 1rem;
+    padding-right: 4rem;
+    color: #fff;
+}
+
+.header__find input::placeholder {
+    font-size: 20px;
+    color: #fff;
+}
+
+.header__date {
+    text-align: center;
+    margin-right: 8.6rem;
+}
+
+.header__hour {
+    font-size: 20px;
+    line-height: 115%;
+}
+
+.header__days {
+    font-size: 12px;
+    line-height: 117%;
+}
+
+.header__personal {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+
+/*------------------------------------*/
+.main-display {
+    padding-top: 5rem;
+}
+
+.main-display__trailer {
+    position: relative;
+    width: 98%;
+    height: 20.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url('../img/трэйлер_фон.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.6rem;
+    padding: 1.9rem 0 1.9rem 1.9rem;
+}
+
+/*----------Как сделать затемнение картинкам заднего фона-----------------
+.main-display__trailer::after,
+.tranding__item::after,
+.popular__item::after,
+.aside__item::after {
+    content: '';
+    position: absolute;
+    display: block;
+    inset: 0;
+    border-radius: 1.6rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+-----------------------------------------------------------------------*/
+
+
+.main-display__views {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 119%;
+
+}
+
+.main-display__header {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 150%;
+}
+
+.main-display__date {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 114%;
+}
+
+.button-play__wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.3);
+    width: 8.1rem;
+    height: 8.1rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-play {
+    /*5 значений ниже = нарисованный треугольник*/
+    width: 0;
+    height: 0;
+    border-top: 1.5rem solid rgba(255, 255, 255, 0.07);
+    border-left: 2.5rem solid #fff;
+    border-bottom: 1.5rem solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 0.2rem;
+}
+
+/*---------------------------------------------*/
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.5rem 1rem 3.5rem 0;
+}
+
+.title__left,
+.title__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title__main {
+    font-size: 2rem;
+    line-height: 115%;
+}
+
+.title__count {
+    font-size: 2rem;
+    line-height: 115%;
+    margin-left: 2rem;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.title__right span {
+    font-size: 1.4rem;
+    line-height: 114%;
+    color: rgba(255, 255, 255, 0.2);
+    padding-top: 0.3rem;
+}
+
+.title__right img {
+    width: 2rem;
+    height: 1.6rem;
+    margin-left: 0.4rem;
+
+}
+
+/*---------trending----------*/
+
+.trending,
+.popular {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1.6rem;
+}
+
+
+.tranding__item {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 48%;
+    height: 25.1rem;
+    background: url("../img/фон_горы.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.8rem;
+}
+
+.trending__plash {
+    position: absolute;
+    width: 12rem;
+    height: 2.5rem;
+    left: 1.9rem;
+    top: 1.9rem;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1.6rem);
+    border-radius: 1.6rem;
+    line-height: 114%;
+    padding: 0.4rem 1.4rem;
+}
+
+.trending__plash span {
+    margin: 1rem 1.4rem;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.trending__footer,
+.popular__footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 1rem 1.8rem 6.4rem;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(1.6rem);
+    border-radius: 1.6rem;
+}
+
+.popular__footer {
+    padding: .8rem 1.9rem .8rem 6.4rem;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.tranding__header {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.tranding__date {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 120%;
+}
+
+.trending__time {
+    padding: 0.4rem 1.3rem;
+    background: #FFFFFF;
+    border-radius: 16px;
+    font-size: 1.4rem;
+    line-height: 114%;
+    color: #000000;
+}
+
+.small {
+    width: 4rem;
+    height: 4rem;
+    left: 7%;
+}
+
+.small-plus {
+    width: 2.5rem;
+    height: 2.5rem;
+    left: 10%;
+}
+
+.button-play__wrap.small .button-play {
+    width: 0;
+    height: 0;
+    border-top: 1rem solid rgba(255, 255, 255, 0.07);
+    border-left: 1.5rem solid #fff;
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.07);
+    border-radius: 0.2rem;
+}
+
+.button-play__wrap.small-plus .button-play {
+    width: 0;
+    height: 0;
+    border-top: 0.5rem solid transparent;
+    border-left: 1rem solid #fff;
+    border-bottom: 0.5rem solid transparent;
+    border-radius: 0.2rem;
+}
+
+
+.popular__item {
+    display: flex;
+    align-items: flex-end;
+    width: 30%;
+    height: 19.2rem;
+    background: url('../img/нэтфликс.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.8rem;
+}
+
+.popular__header {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 120%;
+}
+
+.popular__date {
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 113%;
+}
+
+.popular__rating {
+    display: flex;
+    align-items: center;
+}
+
+.popular__rating span {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 120%;
+    margin-left: 0.4rem;
+}
+
+/*---------------aside--------------------*/
+.aside__wrap {
+    background: rgba(255, 255, 255, 0.02);
+    margin-left: -2.4rem;
+}
+
+.aside__top {
+    position: relative;
+    padding: 5rem 2.3rem 4rem 2.4rem;
+    background: #17161b;
+    border-right: 1px solid #1C1B1F;
+}
+
+.aside {
+    padding-right: 5.9rem;
+}
+
+.aside__top::after {
+    content: url('../img/Polygon\ 4.svg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2rem;
+    height: 2.6rem;
+    background: #FCFCFE;
+    border-radius: 2rem;
+    position: absolute;
+    top: 13rem;
+    right: -1rem;
+    cursor: pointer;
+}
+
+.aside__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.6rem;
+}
+
+.aside__sort {
+    display: flex;
+}
+
+.aside__sort-img {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.4rem;
+}
+
+.aside__sort-img img {
+    width: 0.6rem;
+    height: 0.6rem;
+    cursor: pointer;
+}
+
+.aside__sort-img img:nth-child(1) {
+    margin-bottom: 0.3rem;
+}
+
+.aside__header {
+    font-size: 2rem;
+    line-height: 115%;
+}
+
+.aside__sort-text {
+    font-size: 1.4rem;
+    line-height: 114%;
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 1.5rem;
+}
+
+.aside__sort-select {
+    display: flex;
+    align-items: center;
+}
+
+.aside__sort-select span {
+    font-size: 1.4rem;
+    line-height: 114%;
+}
+
+.aside__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22.6rem;
+    border-radius: 1.5rem;
+    padding: 1.9rem 0 1.9rem 1.9rem;
+    background: url(../img/Бэтмен.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.aside__item:nth-child(3) {
+    margin-top: 3rem;
+    /*margin-bottom: 4rem;*/
+}
+
+.aside__views {
+    position: relative;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 119%;
+    z-index: 10;
+}
+
+.aside__footer.bottom {
+    position: relative;
+    z-index: 10;
+}
+
+.aside__footer.bottom::before {
+    content: '';
+    display: block;
+    width: 6.5rem;
+    height: 0.1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: -3.1rem;
+}
+
+.aside__item-name {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 117%;
+}
+
+.aside__item-date {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 114%;
+}
+
+
+.aside__bottom {
+    padding: 2.5rem 0 2rem 2.4rem;
+    /*background: rgba(255, 255, 255, 0.02);*/
+}
+
+.aside__favourite-text {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    line-height: 115%;
+}
+
+.aside__genre-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding-right: 5rem;
+}
+
+.aside__genre {
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    line-height: 117%;
+}
+
+.orange {
+    background: #E1784F;
+}
+
+.perple {
+    background: #8066F6;
+}
+
+.green {
+    background: #63CFE1;
+}
+
+.gray {
+    background: #2B2A2F;
+}
+
+.aside__favourite {
+    margin-bottom: 6rem;
+}
+
+.aside__add {
+    display: flex;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    line-height: 114%;
+    cursor: pointer;
+}
+
+.aside__add-round {
+    background: #2B2A2F;
+    border-radius: 50%;
+    height: 1.8rem;
+    width: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.aside__add span {
+    padding-left: 0.5rem;
+}
+
+/*-----------------modal---------------------*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3rem 0;
+    z-index: 100;
+    display: none;
+}
+
+
+.active {
+    display: flex;
+}
+
+/*сетка*/
+@media (max-width: 108rem) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 105rem) {
+    html {
+        font-size: 8.75px;
+    }
+}
+
+@media (max-width: 91.5rem) {
+    html {
+        font-size: 7.9px;
+    }
+}
+
+@media (max-width: 91rem) {
+    html {
+        font-size: 8.4px;
+    }
+}
+
+@media (max-width: 90rem) {
+    html {
+        font-size: 7.9px;
+    }
+}
+
+@media (max-width: 80rem) {
+    html {
+        font-size: 7.2px;
+    }
+}
+
+@media (max-width: 72rem) {
+    html {
+        font-size: 6.5px;
+    }
+}
+
+@media (max-width: 64rem) {
+    html {
+        font-size: 5.5px;
+    }
+}
+
+@media (max-width: 48rem) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 44rem) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 38rem) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 34rem) {
+    html {
+        font-size: 7px;
+    }
+}
+
+@media (max-width: 30rem) {
+    html {
+        font-size: 6px;
+    }
+}
+
+@media (max-width: 26rem) {
+    html {
+        font-size: 4.5px;
+    }
+}
+
+@media (max-width: 21rem) {
+    html {
+        font-size: 4.4px;
+    }
+}
+
+/*сетка*/
